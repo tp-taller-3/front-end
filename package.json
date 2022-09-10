@@ -1,5 +1,5 @@
 {
-  "name": "fiuba-laboral-front-end",
+  "name": "fiuba-course-admin-front-end",
   "version": "0.1.0",
   "private": true,
   "contributors": [
@@ -51,7 +51,7 @@
     "tslint": "5.20.1",
     "tiny-warning": ">=1.0.2",
     "typescript": "3.7.5",
-    "validations-fiuba-laboral-v2": "1.0.38"
+    "validations-fiuba-course-admin": "1.0.38"
   },
   "resolutions": {
     "@types/react": "16.9.34"
@@ -101,7 +101,7 @@
     "stylelint": "13.3.3",
     "stylelint-config-sass-guidelines": "7.0.0",
     "stylelint-config-standard": "20.0.0",
-    "tslint-config-fiuba-laboral-v2": "1.0.9",
+    "tslint-config-fiuba-course-admin": "1.0.9",
     "tslint-config-prettier": "1.18.0",
     "tslint-react-hooks": "2.2.1"
   },

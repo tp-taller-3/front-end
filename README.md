@@ -1,8 +1,8 @@
-# Bolsa de Trabajo FIUBA: front-end
+# Administrador de Cursos: front-end
 
 Trabajo Práctico Profesional, FIUBA, 2020
 
-Staging: ![Build status](https://github.com/fiuba-laboral-v2/front-end/workflows/front-end-build/badge.svg)
+Staging: ![Build status](https://github.com/fiuba-course-admin/front-end/workflows/front-end-build/badge.svg)
 
 # Production
 
@@ -10,7 +10,7 @@ https://bolsadetrabajo.fi.uba.ar
 
 # Staging
 
-http://antiguos.fi.uba.ar/laboral/
+http://antiguos.fi.uba.ar/course-admin/
 
 ## Comandos de yarn
 

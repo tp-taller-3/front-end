@@ -1,6 +1,6 @@
 {
-    "name": "Bolsa de Trabajo",
-    "short_name": "Bolsa de Trabajo",
+    "name": "Administrador de Cursos",
+    "short_name": "Cursos",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",

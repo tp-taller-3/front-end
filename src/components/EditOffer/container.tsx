@@ -4,7 +4,7 @@ import { IEditOfferContainerProps } from "./interfaces";
 import { EditOffer } from "./component";
 import { ICreateOfferValues, IOffer } from "$interfaces/Offer";
 import { isNil } from "lodash";
-import { validateSalaryRange } from "validations-fiuba-laboral-v2";
+import { validateSalaryRange } from "validations-fiuba-course-admin";
 import { ApplicantType } from "$interfaces/Applicant";
 import { useSharedSettings } from "$hooks";
 

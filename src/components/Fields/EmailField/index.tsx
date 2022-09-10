@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { TextField } from "$components/Fields";
-import { validateEmail } from "validations-fiuba-laboral-v2";
+import { validateEmail } from "validations-fiuba-course-admin";
 import { ITextFieldProps } from "../TextField";
 
 export const EmailField: FunctionComponent<IEmailFieldProps> = ({ mandatory, ...props }) => (

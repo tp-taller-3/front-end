@@ -6,7 +6,7 @@ import { TextField } from "@material-ui/core";
 import { isNil } from "lodash";
 import { FormikValidator } from "$models/FormikValidator";
 import { EMPTY_SPACE } from "$models/emptySpace";
-import { validateStringNumber } from "validations-fiuba-laboral-v2";
+import { validateStringNumber } from "validations-fiuba-course-admin";
 
 export const NumberField: FunctionComponent<INumberFieldProps> = ({
   name,

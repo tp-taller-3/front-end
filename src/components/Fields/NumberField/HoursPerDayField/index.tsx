@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import { validateIntegerInRange } from "validations-fiuba-laboral-v2";
+import { validateIntegerInRange } from "validations-fiuba-course-admin";
 import { IBaseNumberField, NumberField } from "../index";
 
 export const HoursPerDayField: FunctionComponent<IBaseNumberField> = props => (

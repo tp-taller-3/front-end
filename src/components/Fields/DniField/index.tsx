@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { TextField } from "$components/Fields";
-import { validateIntegerInRange, validateStringSpaces } from "validations-fiuba-laboral-v2";
+import { validateIntegerInRange, validateStringSpaces } from "validations-fiuba-course-admin";
 import { ITextFieldProps } from "../TextField";
 
 const validate = (value: string) => {
