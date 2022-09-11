@@ -2,7 +2,7 @@
 
 Trabajo Práctico Profesional, FIUBA, 2020
 
-Staging: ![Build status](https://github.com/fiuba-course-admin/front-end/workflows/front-end-build/badge.svg)
+Staging: ![Build status](https://github.com/tp-taller-3/front-end/workflows/front-end-build/badge.svg)
 
 # Production
 
