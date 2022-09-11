@@ -51,10 +51,11 @@
     "tslint": "5.20.1",
     "tiny-warning": ">=1.0.2",
     "typescript": "3.7.5",
-    "validations-fiuba-course-admin": "1.0.38"
+    "validations-fiuba-course-admin": "1.0.39"
   },
   "resolutions": {
-    "@types/react": "16.9.34"
+    "@types/react": "16.9.34",
+    "**/pretty-format": "25.1.0"
   },
   "scripts": {
     "start": "NODE_ENV=development yarn run postinstall && react-scripts start",
@@ -101,7 +102,7 @@
     "stylelint": "13.3.3",
     "stylelint-config-sass-guidelines": "7.0.0",
     "stylelint-config-standard": "20.0.0",
-    "tslint-config-fiuba-course-admin": "1.0.9",
+    "tslint-config-fiuba-course-admin": "1.0.11",
     "tslint-config-prettier": "1.18.0",
     "tslint-react-hooks": "2.2.1"
   },
