@@ -1,16 +1,8 @@
 # Administrador de Cursos: front-end
 
-Trabajo Práctico Profesional, FIUBA, 2020
+TP Taller 3, FIUBA, 2022
 
 Staging: ![Build status](https://github.com/tp-taller-3/front-end/workflows/front-end-build/badge.svg)
-
-# Production
-
-https://bolsadetrabajo.fi.uba.ar
-
-# Staging
-
-http://antiguos.fi.uba.ar/course-admin/
 
 ## Comandos de yarn
 
