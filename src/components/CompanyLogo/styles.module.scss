@@ -43,7 +43,7 @@
 }
 
 @include customMedia {
-  &.logoContainer {
+  .logoContainer {
     align-self: center;
   }
 

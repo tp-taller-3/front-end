@@ -14,7 +14,7 @@
 .statisticsContainer {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* stylelint-disable-line */
   justify-content: center;
   margin-top: $spacing-xxl;
   max-width: $largeLaptopWidth;
