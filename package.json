@@ -51,7 +51,7 @@
     "tslint": "5.20.1",
     "tiny-warning": ">=1.0.2",
     "typescript": "3.7.5",
-    "validations-fiuba-course-admin": "1.0.39"
+    "validations-fiuba-course-admin": "1.0.41"
   },
   "resolutions": {
     "@types/react": "16.9.34",
