@@ -1,0 +1,21 @@
+@import "$styles/_variables";
+
+.adminTask {
+  display: flex;
+}
+
+.statusIcon {
+  margin-right: $spacing-m;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.name {
+  font-size: $fontSize-m;
+  font-weight: bold;
+  margin-bottom: $spacing-s * 0.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

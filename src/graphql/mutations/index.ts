@@ -31,6 +31,7 @@ const EXPIRE_OFFER = loader("./expireOffer.graphql");
 const REPUBLISH_OFFER = loader("./republishOffer.graphql");
 const UPDATE_ADMIN = loader("./updateAdmin.graphql");
 const DELETE_COMPANY_USER = loader("./deleteCompanyUser.graphql");
+const SAVE_SURVEY = loader("./saveSurvey.graphql");
 
 export {
   SEND_PASSWORD_RECOVERY_EMAIL,
@@ -61,5 +62,6 @@ export {
   UPDATE_ADMIN,
   DEACTIVATE_ADMIN_ACCOUNT,
   ACTIVATE_ADMIN_ACCOUNT,
-  DELETE_COMPANY_USER
+  DELETE_COMPANY_USER,
+  SAVE_SURVEY
 };

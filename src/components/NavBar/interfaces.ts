@@ -12,6 +12,7 @@ export interface INavBarTranslations {
   notifications: string;
   settings: string;
   tasks: string;
+  surveys: string;
   signUp: string;
   logOut: string;
   myProfile: string;

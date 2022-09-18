@@ -1,6 +1,7 @@
 const USERS = "usuarios";
 const APPLICANTS = "postulantes";
 const COMPANIES = "empresas";
+const SURVEYS = "encuestas";
 const ADMINS = "administradores";
 const APPLICATIONS = "postulaciones";
 const OFFERS = "ofertas";
@@ -41,6 +42,8 @@ export const RoutesBuilder = {
   admin: {
     home: ({ searchParams }: { searchParams?: string } = {}) =>
       `${adminRoute("")}${queryParams(searchParams)}`,
+
+    surveys: () => adminRoute(SURVEYS),
 
     applicants: ({ searchParams }: { searchParams?: string } = {}) =>
       `${adminRoute(APPLICANTS)}${queryParams(searchParams)}`,

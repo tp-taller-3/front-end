@@ -5,7 +5,7 @@ import { useTranslations } from "$models/hooks/queries";
 import { IEmptyDetailTranslations } from "./interfaces";
 
 export const EmptyDetailContainer: FunctionComponent = () => {
-  const translations = useTranslations<IEmptyDetailTranslations>("adminEmptyDetail");
+  const translations = useTranslations<IEmptyDetailTranslations>("surveyListEmptyDetail");
   if (!translations) return <Fragment />;
 
   return <EmptyDetail translations={translations} />;
