@@ -5,7 +5,7 @@ $separator: 7px;
 .items {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* stylelint-disable-line */
   margin-bottom: -$separator;
   margin-top: $separator;
 

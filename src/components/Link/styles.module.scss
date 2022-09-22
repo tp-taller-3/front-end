@@ -4,8 +4,10 @@
 }
 
 .disabled > a {
-  color: currentColor;
-  display: inline-block; // https://css-tricks.com/how-to-disable-links/#thats-not-enough-i-want-something-more-complex-so-that-i-can-look-smarter
+  color: currentcolor;
+  // https://css-tricks.com/how-to-disable-links/
+  // #thats-not-enough-i-want-something-more-complex-so-that-i-can-look-smarter
+  display: inline-block;
   pointer-events: none;
   text-decoration: none;
 }

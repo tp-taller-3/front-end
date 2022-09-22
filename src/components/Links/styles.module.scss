@@ -3,7 +3,7 @@
 .links {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* stylelint-disable-line */
 }
 
 .link {

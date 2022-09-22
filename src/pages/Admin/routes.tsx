@@ -18,9 +18,11 @@ import { DeactivateAdminAccount } from "./DeactivateAdminAccount";
 import { ActivateAdminAccount } from "./ActivateAdminAccount";
 import { RoutesBuilder } from "$models/RoutesBuilder";
 import { Statistics } from "./Statistics";
+import { Surveys } from "./Surveys";
 
 const {
   admins,
+  surveys,
   applicants,
   companies,
   home,
@@ -42,6 +44,7 @@ const {
 
 export const AdminRoutes = [
   { path: admins(), component: Admins },
+  { path: surveys(), component: Surveys },
   {
     path: applicants(),
     component: (props: { location: Location }) => <Applicants searchQuery={props.location.search} />

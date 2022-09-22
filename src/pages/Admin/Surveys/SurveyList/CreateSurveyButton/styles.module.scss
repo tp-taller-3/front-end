@@ -1,0 +1,10 @@
+@import "$styles/_variables";
+
+.button {
+  cursor: pointer;
+  margin: auto;
+}
+
+.buttonText {
+  margin-left: $spacing-s;
+}

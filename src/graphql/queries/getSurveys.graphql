@@ -1,0 +1,11 @@
+query getSurveys($updatedBeforeThan: PaginatedInput) {
+  getSurveys(updatedBeforeThan: $updatedBeforeThan) {
+    shouldFetchMore
+    results {
+      uuid
+      name
+      updatedAt
+      createdAt
+    }
+  }
+}

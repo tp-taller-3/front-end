@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "$styles/_variables";
 
 @mixin containerStyles($color, $transparencyFactor) {
@@ -10,15 +12,15 @@
   padding-right: $spacing-m;
 
   &:hover {
-    background-color: transparentize($color, 1 - 0.05 / $transparencyFactor);
+    background-color: transparentize($color, 1 - math.div(0.05, $transparencyFactor));
   }
 
   &.selected {
-    background-color: transparentize($color, 1 - 0.15 / $transparencyFactor);
+    background-color: transparentize($color, 1 - math.div(0.15, $transparencyFactor));
   }
 
   &:active {
-    background-color: transparentize($color, 1 - 0.1 / $transparencyFactor);
+    background-color: transparentize($color, 1 - math.div(0.1, $transparencyFactor));
   }
 }
 

@@ -1,0 +1,8 @@
+mutation saveSurvey($uuid: ID, $name: String!) {
+  saveSurvey(uuid: $uuid, name: $name) {
+    uuid
+    name
+    createdAt
+    updatedAt
+  }
+}

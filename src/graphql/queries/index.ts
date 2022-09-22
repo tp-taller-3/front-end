@@ -7,6 +7,7 @@ const GET_COMPANY_BY_UUID_WITH_USERS = loader("./getCompanyByUuidWithUsers.graph
 const GET_APPLICANT = loader("./getApplicant.graphql");
 const GET_APPLICANTS = loader("./getApplicants.graphql");
 const GET_ADMINS = loader("./getAdmins.graphql");
+const GET_SURVEYS = loader("./getSurveys.graphql");
 const GET_ADMIN_BY_UUID = loader("./getAdminByUuid.graphql");
 const GET_DELETED_ADMIN_BY_UUID = loader("./getDeletedAdminByUuid.graphql");
 const GET_ADMIN_SETTINGS = loader("./getAdminSettings.graphql");
@@ -93,5 +94,6 @@ export {
   GET_ADMIN_BY_UUID,
   GET_DELETED_ADMIN_BY_UUID,
   GET_COMPANY_USER_BY_UUID,
-  GET_STATISTICS
+  GET_STATISTICS,
+  GET_SURVEYS
 };
