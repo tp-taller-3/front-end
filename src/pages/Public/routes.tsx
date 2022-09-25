@@ -1,5 +1,5 @@
 import { InternalServerError } from "./InternalServerError";
-import { Login } from "./Login";
+import { Login } from "../Applicant/Login";
 import Home from "./Home";
 import { RoutesBuilder } from "$models/RoutesBuilder";
 import { NotFound } from "./NotFound";
