@@ -16,6 +16,7 @@ import EqualizerIcon from "@material-ui/icons/Equalizer";
 import { AdminNotificationIcon } from "$components/AdminNotificationIcon";
 import { CompanyNotificationsIcon } from "$components/CompanyNotificationsIcon";
 import { ApplicantNotificationIcon } from "$components/ApplicantNotificationIcon";
+import YoutubeSearchedFor from "@material-ui/icons/YoutubeSearchedFor";
 
 describe("NavBarLinks", () => {
   const currentRoute = "";
@@ -272,6 +273,11 @@ describe("NavBarLinks", () => {
           path: RoutesBuilder.admin.surveys(),
           title: translations.surveys,
           icon: BallotIcon
+        },
+        {
+          path: RoutesBuilder.admin.surveysResult(),
+          title: "Resultados",
+          icon: YoutubeSearchedFor
         },
         {
           path: RoutesBuilder.admin.applicants(),

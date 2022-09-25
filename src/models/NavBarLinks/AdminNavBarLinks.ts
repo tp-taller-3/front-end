@@ -11,10 +11,12 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
 import HomeIcon from "@material-ui/icons/Home";
 import BallotIcon from "@material-ui/icons/Ballot";
+import YoutubeSearchedFor from "@material-ui/icons/YoutubeSearchedFor";
 
 const {
   home,
   surveys,
+  surveysResult,
   applicants,
   companies,
   admins,
@@ -36,6 +38,11 @@ export const AdminNavBarLinks = {
       path: surveys(),
       title: translations.surveys,
       icon: BallotIcon
+    },
+    {
+      path: surveysResult(),
+      title: "Resultados",
+      icon: YoutubeSearchedFor
     },
     {
       path: applicants(),
