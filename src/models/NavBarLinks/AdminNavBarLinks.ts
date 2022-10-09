@@ -10,11 +10,11 @@ import { AdminNotificationIcon } from "$components/AdminNotificationIcon";
 import SettingsIcon from "@material-ui/icons/Settings";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
 import HomeIcon from "@material-ui/icons/Home";
-import BallotIcon from "@material-ui/icons/Ballot";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 
 const {
   home,
-  surveys,
+  csvUpload,
   applicants,
   companies,
   admins,
@@ -33,9 +33,9 @@ export const AdminNavBarLinks = {
       icon: HomeIcon
     },
     {
-      path: surveys(),
-      title: translations.surveys,
-      icon: BallotIcon
+      path: csvUpload(),
+      title: translations.csvUpload,
+      icon: CloudUploadIcon
     },
     {
       path: applicants(),

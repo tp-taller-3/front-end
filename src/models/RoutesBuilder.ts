@@ -1,7 +1,7 @@
 const USERS = "usuarios";
 const APPLICANTS = "postulantes";
 const COMPANIES = "empresas";
-const SURVEYS = "encuestas";
+const CSV_UPLOAD = "cargar-csv";
 const ADMINS = "administradores";
 const APPLICATIONS = "postulaciones";
 const OFFERS = "ofertas";
@@ -43,7 +43,7 @@ export const RoutesBuilder = {
     home: ({ searchParams }: { searchParams?: string } = {}) =>
       `${adminRoute("")}${queryParams(searchParams)}`,
 
-    surveys: () => adminRoute(SURVEYS),
+    csvUpload: () => adminRoute(CSV_UPLOAD),
 
     applicants: ({ searchParams }: { searchParams?: string } = {}) =>
       `${adminRoute(APPLICANTS)}${queryParams(searchParams)}`,

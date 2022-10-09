@@ -1,1 +1,0 @@
-export { CreateSurveyButton } from "./component";
