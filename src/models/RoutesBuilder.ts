@@ -93,6 +93,8 @@ export const RoutesBuilder = {
 
     login: () => applicantRoute(LOGIN),
 
+    surveysResult: () => applicantRoute(SURVEYS_RESULT),
+
     myProfile: () => applicantRoute(PROFILE),
 
     editMyProfile: () => applicantRoute(PROFILE, EDIT),

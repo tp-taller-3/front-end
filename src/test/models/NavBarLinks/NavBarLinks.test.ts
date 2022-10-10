@@ -193,6 +193,11 @@ describe("NavBarLinks", () => {
           icon: LibraryBooksIcon
         },
         {
+          path: RoutesBuilder.applicant.surveysResult(),
+          title: "Resultados",
+          icon: YoutubeSearchedFor
+        },
+        {
           path: RoutesBuilder.applicant.myProfile(),
           title: translations.myProfile,
           icon: SchoolIcon
@@ -213,6 +218,11 @@ describe("NavBarLinks", () => {
           title: translations.jobOffers,
           tooltipMessage: translations.pendingProfile,
           icon: LibraryBooksIcon
+        },
+        {
+          path: RoutesBuilder.applicant.surveysResult(),
+          title: "Resultados",
+          icon: YoutubeSearchedFor
         },
         {
           path: RoutesBuilder.applicant.myProfile(),
@@ -236,6 +246,11 @@ describe("NavBarLinks", () => {
           title: translations.jobOffers,
           tooltipMessage: translations.rejectedProfile,
           icon: LibraryBooksIcon
+        },
+        {
+          path: RoutesBuilder.applicant.surveysResult(),
+          title: "Resultados",
+          icon: YoutubeSearchedFor
         },
         {
           path: RoutesBuilder.applicant.myProfile(),
@@ -273,11 +288,6 @@ describe("NavBarLinks", () => {
           path: RoutesBuilder.admin.surveys(),
           title: translations.surveys,
           icon: BallotIcon
-        },
-        {
-          path: RoutesBuilder.admin.surveysResult(),
-          title: "Resultados",
-          icon: YoutubeSearchedFor
         },
         {
           path: RoutesBuilder.admin.applicants(),
