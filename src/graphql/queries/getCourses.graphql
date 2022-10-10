@@ -1,7 +1,6 @@
-query GetCourses($departmentUuid: ID!) {
-  getCourses(departmentUuid: $departmentUuid) {
+query GetCourses($semesterUuid: ID!) {
+  getCourses(semesterUuid: $semesterUuid) {
     uuid
     name
-    leadDNI
   }
 }

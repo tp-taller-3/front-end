@@ -7,8 +7,6 @@ import { Window } from "../../../components/Window";
 import { noop } from "lodash";
 import { useSemesters } from "../../../models/hooks/queries/useSemesters";
 import { FormSection } from "../../../components/FormSection";
-
-import { SelectDepartment } from "./SelectDepartment";
 import { SelectCourses } from "./SelectCourse";
 import styles from "../../Admin/Settings/SecretarySettingsFormSection/styles.module.scss";
 export const SurveysResult: FunctionComponent = () => {
@@ -41,8 +39,7 @@ export const SurveysResult: FunctionComponent = () => {
                     getOptionValue={option => option.uuid}
                   />
                 )}
-                {values.semester && <SelectDepartment semester={values.semester} />}
-                {values.department && <SelectCourses department={values.department} />}
+                {values.semester && <SelectCourses semester={values.semester} />}
               </FormikForm>
             )}
           </Formik>

@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from "react";
 import { useCourses } from "../../../../models/hooks/queries/useCourses";
 import { SearchSelector } from "../../../../components/SearchSelector";
-import { IDepartment } from "../interfaces";
+import { ISemester } from "../interfaces";
 
-export const SelectCourses: FunctionComponent<IDepartment> = ({ department }) => {
-  const courses = useCourses(department);
+export const SelectCourses: FunctionComponent<ISemester> = ({ semester }) => {
+  const courses = useCourses(semester);
 
   return (
     <>

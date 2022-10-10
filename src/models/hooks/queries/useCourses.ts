@@ -4,10 +4,10 @@ import { RoutesBuilder } from "$models/RoutesBuilder";
 import { useHistory } from "react-router-dom";
 import { ICourses } from "../../../interfaces/Courses";
 
-export const useCourses = (departmentUuid: string) => {
+export const useCourses = (semesterUuid: string) => {
   const history = useHistory();
   return useQuery<{}, { getCourses: ICourses[] }>(GET_COURSES, {
-    variables: { departmentUuid },
+    variables: { semesterUuid },
     errorHandlers: {
       JobApplicationNotFoundError: () => history.push(RoutesBuilder.public.notFound()),
       defaultHandler: () => history.push(RoutesBuilder.public.internalServerError())
