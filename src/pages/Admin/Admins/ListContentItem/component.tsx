@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from "react";
 
-import { Secretary } from "$interfaces/Secretary";
 import { AdminStatus } from "$interfaces/Admin";
 import { TimeFormatter } from "$models/TimeFormatter";
 
@@ -14,9 +13,6 @@ export const ListContentItem: FunctionComponent<IListContentItem> = ({ admin, tr
     <p className={styles.text}>{`${admin.user.name} ${admin.user.surname}`}</p>
     <p className={styles.text}>{admin.user.dni}</p>
     <p className={styles.text}>{admin.user.email}</p>
-    <p className={styles.text}>
-      {admin.secretary === Secretary.graduados ? translations?.graduados : translations?.extension}
-    </p>
     <div className={styles.text}>{TimeFormatter.dateTime(admin.createdAt)}</div>
     <p className={styles.text}>
       {admin.status === AdminStatus.active ? translations?.active : translations?.deactivated}

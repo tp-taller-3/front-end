@@ -13,7 +13,8 @@ export const SelectField = <Value extends IBaseValue>({
   options,
   title,
   className,
-  helperText
+  helperText,
+  disabled
 }: ISelectFieldProps<Value>) => {
   const valueToString = (value: IBaseValue) => (isNaN(value) ? "" : value.toString());
 
@@ -32,6 +33,7 @@ export const SelectField = <Value extends IBaseValue>({
                 {title}
               </InputLabel>
               <Select
+                disabled={disabled}
                 className={styles.select}
                 id={fieldName}
                 onBlur={() => form.setFieldTouched(fieldName, true)}
@@ -62,6 +64,7 @@ interface ISelectFieldProps<Value> {
   className?: string;
   helperText?: string;
   mandatory?: boolean;
+  disabled?: boolean;
   fieldName: string;
   options: Array<ISelectFieldOption<Value>>;
   title: string;

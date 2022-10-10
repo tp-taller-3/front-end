@@ -18,13 +18,13 @@ import { DeactivateAdminAccount } from "./DeactivateAdminAccount";
 import { ActivateAdminAccount } from "./ActivateAdminAccount";
 import { RoutesBuilder } from "$models/RoutesBuilder";
 import { Statistics } from "./Statistics";
-import { Surveys } from "./Surveys";
+import { CSVUpload } from "./CSVUpload";
 import { SurveysResult } from "./SurveyResult";
 
 const {
   admins,
-  surveys,
   surveysResult,
+  csvUpload,
   applicants,
   companies,
   home,
@@ -46,8 +46,8 @@ const {
 
 export const AdminRoutes = [
   { path: admins(), component: Admins },
-  { path: surveys(), component: Surveys },
   { path: surveysResult(), component: SurveysResult },
+  { path: csvUpload(), component: CSVUpload },
   {
     path: applicants(),
     component: (props: { location: Location }) => <Applicants searchQuery={props.location.search} />
