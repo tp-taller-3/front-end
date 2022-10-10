@@ -10,7 +10,7 @@ import LibraryBooksIcon from "@material-ui/icons/LibraryBooks";
 import SchoolIcon from "@material-ui/icons/School";
 import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 import HomeIcon from "@material-ui/icons/Home";
-import BallotIcon from "@material-ui/icons/Ballot";
+import CloudUploadIcon from "@material-ui/icons/CloudUpload";
 import SettingsIcon from "@material-ui/icons/Settings";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
 import { AdminNotificationIcon } from "$components/AdminNotificationIcon";
@@ -39,7 +39,7 @@ describe("NavBarLinks", () => {
     settings: "settings",
     credits: "credits",
     statistics: "statistics",
-    surveys: "surveys"
+    csvUpload: "csvUpload"
   };
   const userAttributes = {
     email: "companyUser@company.com",
@@ -269,9 +269,9 @@ describe("NavBarLinks", () => {
           icon: HomeIcon
         },
         {
-          path: RoutesBuilder.admin.surveys(),
-          title: translations.surveys,
-          icon: BallotIcon
+          path: RoutesBuilder.admin.csvUpload(),
+          title: translations.csvUpload,
+          icon: CloudUploadIcon
         },
         {
           path: RoutesBuilder.admin.applicants(),
