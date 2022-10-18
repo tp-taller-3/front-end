@@ -1,1 +1,0 @@
-export { SelectCourses } from "./component";

@@ -19,11 +19,9 @@ import { ActivateAdminAccount } from "./ActivateAdminAccount";
 import { RoutesBuilder } from "$models/RoutesBuilder";
 import { Statistics } from "./Statistics";
 import { CSVUpload } from "./CSVUpload";
-import { SurveysResult } from "./SurveyResult";
 
 const {
   admins,
-  surveysResult,
   csvUpload,
   applicants,
   companies,
@@ -46,7 +44,6 @@ const {
 
 export const AdminRoutes = [
   { path: admins(), component: Admins },
-  { path: surveysResult(), component: SurveysResult },
   { path: csvUpload(), component: CSVUpload },
   {
     path: applicants(),
