@@ -1,0 +1,14 @@
+@import "$styles/_variables";
+
+.header {
+  display: flex;
+  margin-bottom: $spacing-s;
+}
+
+.formSection {
+  margin-bottom: $spacing-xl;
+}
+
+.formContainer {
+  width: 80%;
+}
