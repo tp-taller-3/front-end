@@ -53,6 +53,7 @@ const GET_STATISTICS = loader("./getStatistics.graphql");
 const GET_SEMESTERS = loader("./getSemesters.graphql");
 const GET_DEPARTMENTS = loader("./getDepartments.graphql");
 const GET_COURSES = loader("./getCourses.graphql");
+const GET_QUESTIONS = loader("./getQuestions.graphql");
 
 export {
   GET_CURRENT_USER,
@@ -101,5 +102,6 @@ export {
   GET_SURVEYS,
   GET_SEMESTERS,
   GET_DEPARTMENTS,
-  GET_COURSES
+  GET_COURSES,
+  GET_QUESTIONS
 };

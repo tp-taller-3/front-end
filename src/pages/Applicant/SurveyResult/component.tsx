@@ -10,7 +10,7 @@ import { SelectCourses } from "./SelectCourse";
 
 import styles from "./styles.module.scss";
 import { noop } from "lodash";
-import { PaginationTable } from "./PaginationTable";
+import { ResultsComponent } from "./ResultsComponent";
 
 export const SurveysResult: FunctionComponent = () => {
   const semesters = useSemesters();
@@ -46,9 +46,9 @@ export const SurveysResult: FunctionComponent = () => {
                 )}
               </FormikForm>
             </FormSection>
-            {formikProps.values.course && (
+            {formikProps.values.course && formikProps.values.semester && (
               <FormSection title={"Resultados encuesta"} subtitle={`Encuesta del curso`}>
-                <PaginationTable></PaginationTable>
+                <ResultsComponent course={formikProps.values.course}></ResultsComponent>
               </FormSection>
             )}
           </Form>
