@@ -5,6 +5,8 @@ import styles from "../styles.module.scss";
 
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
+import classNames from "classnames";
+import { Subtitle } from "../../../../components/Subtitle";
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
@@ -38,21 +40,17 @@ export const AnswerComponent: FunctionComponent<IResult> = ({ question }) => {
   });
 
   const options = {
-    plugins: {
-      title: {
-        display: true,
-        text: question.questionText,
-        font: {
-          size: 20
-        }
-      }
-    },
     responsive: true
   };
 
   return (
-    <div className={styles.doughnut}>
-      <Doughnut data={data} options={options} />
+    <div className={classNames(styles.formSection)}>
+      <div>
+        <Subtitle className={classNames(styles.title)}>{question.questionText}</Subtitle>
+      </div>
+      <div className={styles.doughnut}>
+        <Doughnut data={data} options={options} />
+      </div>
     </div>
   );
 };

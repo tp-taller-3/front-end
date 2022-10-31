@@ -14,7 +14,25 @@
 }
 
 .doughnut {
-  height: 65%;
+  height: 50%;
   margin: auto auto $spacing-m;
-  width: 65%;
+  width: 50%;
+}
+
+.table {
+  height: 80%;
+  margin: auto auto $spacing-m;
+  width: 80%;
+}
+
+.title {
+  text-align: center;
+}
+
+.titleWithMarginBottom {
+  margin-bottom: $spacing-s;
+}
+
+.answerHeader {
+  margin-bottom: $spacing-m;
 }
