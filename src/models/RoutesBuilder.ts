@@ -46,8 +46,6 @@ export const RoutesBuilder = {
 
     csvUpload: () => adminRoute(CSV_UPLOAD),
 
-    surveysResult: () => adminRoute(SURVEYS_RESULT),
-
     applicants: ({ searchParams }: { searchParams?: string } = {}) =>
       `${adminRoute(APPLICANTS)}${queryParams(searchParams)}`,
 
