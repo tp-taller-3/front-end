@@ -1,0 +1,17 @@
+query GetQuestions($courseUuid: ID!) {
+  getQuestions(courseUuid: $courseUuid) {
+    uuid
+    isPublic
+    questionText
+    category
+    updatedAt
+    createdAt
+    answers {
+      uuid
+      value
+      count
+      updatedAt
+      createdAt
+    }
+  }
+}

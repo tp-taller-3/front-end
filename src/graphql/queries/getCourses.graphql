@@ -1,0 +1,6 @@
+query GetCourses($semesterUuid: ID!) {
+  getCourses(semesterUuid: $semesterUuid) {
+    uuid
+    name
+  }
+}

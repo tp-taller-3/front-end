@@ -50,6 +50,10 @@ const GET_REJECTED_COMPANY_PROFILE_MESSAGE_BY_UUID = loader(
   "./getRejectedCompanyProfileMessageByUuid.graphql"
 );
 const GET_STATISTICS = loader("./getStatistics.graphql");
+const GET_SEMESTERS = loader("./getSemesters.graphql");
+const GET_DEPARTMENTS = loader("./getDepartments.graphql");
+const GET_COURSES = loader("./getCourses.graphql");
+const GET_QUESTIONS = loader("./getQuestions.graphql");
 
 export {
   GET_CURRENT_USER,
@@ -95,5 +99,9 @@ export {
   GET_DELETED_ADMIN_BY_UUID,
   GET_COMPANY_USER_BY_UUID,
   GET_STATISTICS,
-  GET_SURVEYS
+  GET_SURVEYS,
+  GET_SEMESTERS,
+  GET_DEPARTMENTS,
+  GET_COURSES,
+  GET_QUESTIONS
 };

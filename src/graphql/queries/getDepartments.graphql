@@ -1,0 +1,7 @@
+query GetDepartments($semesterUuid: ID!) {
+  getDepartments(semesterUuid: $semesterUuid) {
+    uuid
+    name
+    leadDNI
+  }
+}

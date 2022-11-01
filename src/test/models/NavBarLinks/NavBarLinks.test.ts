@@ -16,6 +16,7 @@ import EqualizerIcon from "@material-ui/icons/Equalizer";
 import { AdminNotificationIcon } from "$components/AdminNotificationIcon";
 import { CompanyNotificationsIcon } from "$components/CompanyNotificationsIcon";
 import { ApplicantNotificationIcon } from "$components/ApplicantNotificationIcon";
+import YoutubeSearchedFor from "@material-ui/icons/YoutubeSearchedFor";
 
 describe("NavBarLinks", () => {
   const currentRoute = "";
@@ -192,6 +193,11 @@ describe("NavBarLinks", () => {
           icon: LibraryBooksIcon
         },
         {
+          path: RoutesBuilder.applicant.surveysResult(),
+          title: "Resultados",
+          icon: YoutubeSearchedFor
+        },
+        {
           path: RoutesBuilder.applicant.myProfile(),
           title: translations.myProfile,
           icon: SchoolIcon
@@ -212,6 +218,11 @@ describe("NavBarLinks", () => {
           title: translations.jobOffers,
           tooltipMessage: translations.pendingProfile,
           icon: LibraryBooksIcon
+        },
+        {
+          path: RoutesBuilder.applicant.surveysResult(),
+          title: "Resultados",
+          icon: YoutubeSearchedFor
         },
         {
           path: RoutesBuilder.applicant.myProfile(),
@@ -235,6 +246,11 @@ describe("NavBarLinks", () => {
           title: translations.jobOffers,
           tooltipMessage: translations.rejectedProfile,
           icon: LibraryBooksIcon
+        },
+        {
+          path: RoutesBuilder.applicant.surveysResult(),
+          title: "Resultados",
+          icon: YoutubeSearchedFor
         },
         {
           path: RoutesBuilder.applicant.myProfile(),

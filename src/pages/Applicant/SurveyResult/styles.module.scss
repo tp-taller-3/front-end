@@ -1,0 +1,38 @@
+@import "$styles/_variables";
+
+.header {
+  display: flex;
+  margin-bottom: $spacing-s;
+}
+
+.formSection {
+  margin-bottom: $spacing-xl;
+}
+
+.formContainer {
+  width: 80%;
+}
+
+.doughnut {
+  height: 50%;
+  margin: auto auto $spacing-m;
+  width: 50%;
+}
+
+.table {
+  height: 80%;
+  margin: auto auto $spacing-m;
+  width: 80%;
+}
+
+.title {
+  text-align: center;
+}
+
+.titleWithMarginBottom {
+  margin-bottom: $spacing-s;
+}
+
+.answerHeader {
+  margin-bottom: $spacing-m;
+}

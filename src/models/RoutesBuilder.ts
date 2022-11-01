@@ -1,6 +1,7 @@
 const USERS = "usuarios";
 const APPLICANTS = "postulantes";
 const COMPANIES = "empresas";
+const SURVEYS_RESULT = "resultado-encuestas";
 const CSV_UPLOAD = "cargar-csv";
 const ADMINS = "administradores";
 const APPLICATIONS = "postulaciones";
@@ -89,6 +90,8 @@ export const RoutesBuilder = {
       `${applicantRoute(SIGN_UP)}${dni ? queryParams(`dni=${dni}`) : ""}`,
 
     login: () => applicantRoute(LOGIN),
+
+    surveysResult: () => applicantRoute(SURVEYS_RESULT),
 
     myProfile: () => applicantRoute(PROFILE),
 
