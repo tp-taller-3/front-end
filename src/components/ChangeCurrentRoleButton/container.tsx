@@ -14,7 +14,7 @@ export const ChangeCurrentRoleButtonContainer: FunctionComponent<IContainerProps
   const currentRole = currentUser.getCurrentRole(location.pathname);
 
   const changeCurrentRole = () => {
-    if (currentRole.isAdminRole()) history.push(RoutesBuilder.applicant.myProfile());
+    if (currentRole.isAdminRole()) history.push(RoutesBuilder.applicant.surveysResult());
     if (currentRole.isApplicantRole()) history.push(RoutesBuilder.admin.home());
   };
 
