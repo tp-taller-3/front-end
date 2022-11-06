@@ -7,7 +7,13 @@ import { PositiveIntegerField, SelectField } from "$components/Fields";
 import { SubmitButton } from "$components/SubmitButton";
 import { Configuration } from "../../../config";
 import axios from "axios";
-import { useTranslations } from "../../../models/hooks";
+import { useSnackbar, useTranslations } from "../../../models/hooks";
+import { ActionButton } from "../../../components/Snackbar/ActionButton";
+import { RoutesBuilder } from "../../../models/RoutesBuilder";
+import { useHistory } from "react-router-dom";
+import { interpolateValues } from "../../../models/interpolateValues";
+
+import styles from "./styles.module.scss";
 
 const BASE_URL = Configuration.application_base_url.slice(
   0,
@@ -16,10 +22,17 @@ const BASE_URL = Configuration.application_base_url.slice(
 const UPLOAD_URL = `${BASE_URL}/csv-upload`;
 
 export const CSVUpload: FunctionComponent = () => {
+  const history = useHistory();
   const translations = useTranslations<ITranslations>("csvUpload");
 
   const [answersCSV, setAnswersCSV] = useState<File | null>(null);
   const [teachersCSV, setTeachersCSV] = useState<File | null>(null);
+
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+
+  if (!translations) return <Window />;
+
+  const translateFilename = (filename: "answersCSV" | "teachersCSV") => translations[filename];
 
   const onSubmit = async ({ semester, year }: { semester: string; year: string }) => {
     const formData = new FormData();
@@ -30,36 +43,78 @@ export const CSVUpload: FunctionComponent = () => {
 
     try {
       const response = await axios.post(UPLOAD_URL, formData);
-      // tslint:disable-next-line:no-console
-      console.log(response);
+      if (response.statusText === "Created") {
+        enqueueSnackbar(translations.success, {
+          action: (
+            <ActionButton
+              kind="success"
+              onClick={() => {
+                history.push(RoutesBuilder.applicant.myProfile());
+                closeSnackbar();
+              }}
+            >
+              {translations.checkResults}
+            </ActionButton>
+          ),
+          variant: "success",
+          persist: true
+        });
+        return;
+      }
     } catch (error) {
-      // tslint:disable-next-line:no-console
-      console.log(error);
-    }
-  };
+      if (error.code === "ERR_BAD_REQUEST") {
+        const responseError = error.response.data.error;
 
-  if (!translations) return <Window />;
+        if (responseError?.code) {
+          enqueueSnackbar(
+            interpolateValues(translations[responseError?.code as "_knownErrorCode"], {
+              ...responseError,
+              missingFiles:
+                (responseError.missingFiles || []).map(translateFilename).join(", ") ||
+                translations.noFiles,
+              extraFiles:
+                (responseError.extraFiles || []).map(translateFilename).join(", ") ||
+                translations.noFiles,
+              missingColumns:
+                (responseError.missingColumns || []).join(", ") || translations.noColumns,
+              extraColumns: (responseError.extraColumns || []).join(", ") || translations.noColumns,
+              field: translations[responseError.field as "semester" | "year"],
+              file: translateFilename(responseError.file),
+              error: JSON.stringify(responseError.error)
+            }),
+            {
+              variant: "error",
+              persist: true
+            }
+          );
+          return;
+        }
+      }
+    }
+
+    enqueueSnackbar(translations.unknownError, { variant: "error" });
+  };
 
   return (
     <Window>
       <Form title={translations.title}>
         <Formik initialValues={{ semester: "", year: "" }} onSubmit={onSubmit}>
           {({ values: { year, semester }, isSubmitting, errors }) => {
-            // tslint:disable-next-line:no-console
-            console.log({ answersCSV, teachersCSV, year, semester });
             return (
               <FormikForm id="csvUpload">
-                <SelectField
-                  disabled={isSubmitting}
-                  fieldName="semester"
-                  title={translations.semester}
-                  options={["1", "2"].map(value => ({
-                    value,
-                    label: (translations as any)[value]
-                  }))}
-                />
-                <PositiveIntegerField label="Año" name="year" />
-                <div>
+                <div className={styles.semesterYearContainer}>
+                  <SelectField
+                    disabled={isSubmitting}
+                    fieldName="semester"
+                    title={translations.semester}
+                    options={["1", "2"].map(value => ({
+                      value,
+                      label: (translations as any)[value]
+                    }))}
+                  />
+                  <PositiveIntegerField label="Año" name="year" />
+                </div>
+                <div className={styles.fileField}>
                   <label htmlFor="answersCSV">{translations.answersCSV}</label>
                   <input
                     id="answersCSV"
@@ -70,7 +125,7 @@ export const CSVUpload: FunctionComponent = () => {
                     onChange={e => e.target.files && setAnswersCSV(e.target.files[0])}
                   />
                 </div>
-                <div>
+                <div className={styles.fileField}>
                   <label htmlFor="teachersCSV">{translations.teachersCSV}</label>
                   <input
                     id="teachersCSV"
@@ -82,6 +137,7 @@ export const CSVUpload: FunctionComponent = () => {
                   />
                 </div>
                 <SubmitButton
+                  className={styles.submitButton}
                   kind="primary"
                   disabled={!(answersCSV && teachersCSV && year && semester) || isSubmitting}
                   errors={errors}
@@ -106,4 +162,10 @@ interface ITranslations {
   year: string;
   answersCSV: string;
   teachersCSV: string;
+  success: string;
+  unknownError: string;
+  checkResults: string;
+  noFiles: string;
+  noColumns: string;
+  _knownErrorCode: string;
 }

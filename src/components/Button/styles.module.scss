@@ -66,3 +66,7 @@ $lightRedBtn: #fee8e7;
 .warning {
   @include btnColors($grey, $lightestGrey, $grey);
 }
+
+.success {
+  @include btnColors($green, $lightGreen, $green);
+}
