@@ -30,7 +30,7 @@ const STATISTICS = "estadisticas";
 
 const routeBuilder = (urlPrefix: string) => (...path: string[]) => `${urlPrefix}/${path.join("/")}`;
 
-export const applicantRoutePrefix = "postulante";
+export const applicantRoutePrefix = "estudiante";
 export const adminRoutePrefix = "admin";
 const applicantRoute = routeBuilder(`/${applicantRoutePrefix}`);
 const companyRoute = routeBuilder("/empresa");

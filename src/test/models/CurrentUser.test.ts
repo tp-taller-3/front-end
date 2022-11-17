@@ -142,7 +142,7 @@ describe("CurrentUser", () => {
       });
 
       it("returns admin role if the current route is from an admin", () => {
-        const role = currentUser.getCurrentRole("/postulante/perfil");
+        const role = currentUser.getCurrentRole("/estudiante/perfil");
         expect(role.isApplicantRole()).toBe(true);
       });
 

@@ -1,0 +1,23 @@
+@import "$styles/_variables";
+
+.semesterYearContainer {
+  display: flex;
+
+  > div:not(:last-child) {
+    flex: 0 0 70%;
+    margin-right: $spacing-m;
+  }
+}
+
+.fileField {
+  margin-bottom: $spacing-xl;
+
+  label {
+    display: block;
+    margin-bottom: $spacing-s;
+  }
+}
+
+.submitButton {
+  margin-top: $spacing-xxl;
+}

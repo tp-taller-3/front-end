@@ -44,7 +44,7 @@ export const AnswerComponent: FunctionComponent<IResult> = ({ question }) => {
   };
 
   return (
-    <div className={classNames(styles.formSection)}>
+    <div className={classNames(styles.formSection, styles.answerHeader)}>
       <div>
         <Subtitle className={classNames(styles.title)}>{question.questionText}</Subtitle>
       </div>

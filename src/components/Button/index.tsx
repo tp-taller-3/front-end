@@ -19,7 +19,7 @@ export const Button: FunctionComponent<IButtonProps> = ({
   return link ? <Link to={link} {...buttonProps} /> : <button {...buttonProps} />;
 };
 
-export type ButtonKind = "primary" | "secondary" | "warning" | "danger";
+export type ButtonKind = "primary" | "secondary" | "warning" | "danger" | "success";
 export type ButtonType = "button" | "submit" | "reset";
 
 export interface IButtonProps {
