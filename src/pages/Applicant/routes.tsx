@@ -9,13 +9,11 @@ import { Notifications } from "./Notifications";
 import { EditPadron } from "./EditPadron";
 import { RoutesBuilder } from "$models/RoutesBuilder";
 import React from "react";
-import { SurveysResult } from "./SurveyResult";
 
 const {
   offerList,
   signUp,
   login,
-  surveysResult,
   myProfile,
   editMyProfile,
   offerDetail,
@@ -35,7 +33,6 @@ export const ApplicantRoutes = [
     public: true
   },
   { path: login(), component: Login, public: true },
-  { path: surveysResult(), component: SurveysResult },
   { path: myProfile(), component: Profile },
   { path: editMyProfile(), component: EditableProfile },
   { path: offerDetail(":uuid"), component: OfferDetail },

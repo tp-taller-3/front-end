@@ -11,6 +11,7 @@ import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 // import EqualizerIcon from "@material-ui/icons/Equalizer";
 // import HomeIcon from "@material-ui/icons/Home";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import YoutubeSearchedFor from "@material-ui/icons/YoutubeSearchedFor";
 
 const {
   // home,
@@ -24,6 +25,7 @@ const {
   // settings,
   // statistics
 } = RoutesBuilder.admin;
+const { surveysResult } = RoutesBuilder.public;
 
 export const AdminNavBarLinks = {
   create: (translations: INavBarTranslations): INavBarLink[] => [
@@ -32,6 +34,11 @@ export const AdminNavBarLinks = {
     //   title: translations.tasks,
     //   icon: HomeIcon
     // },
+    {
+      path: surveysResult(),
+      title: "Resultados",
+      icon: YoutubeSearchedFor
+    },
     {
       path: csvUpload(),
       title: translations.csvUpload,
