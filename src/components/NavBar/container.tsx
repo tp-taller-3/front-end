@@ -1,4 +1,4 @@
-import React, { Fragment, FunctionComponent, useEffect, useRef, useState } from "react";
+import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import { useApolloClient } from "@apollo/client";
 import { RoutesBuilder } from "$models/RoutesBuilder";
@@ -36,8 +36,9 @@ export const NavBarContainer: FunctionComponent<INavBarContainerProps> = props =
   });
 
   const currentUser = currentUserResponse.data.getCurrentUser;
-  if (!translations || !currentUser) return <Fragment />;
-  const links = currentUser ? NavBarLinks.create(currentUser, translations, location.pathname) : [];
+  const links = translations
+    ? NavBarLinks.create(currentUser, translations, location.pathname)
+    : [];
 
   const onLogOut = async () => {
     closeSnackbar();

@@ -15,7 +15,7 @@ import { useHistory } from "react-router-dom";
 // @ts-ignore
 export const FeedContainer: FunctionComponent<IFeedContainerProps> = ({ searchQuery }) => {
   const history = useHistory();
-  history.push(RoutesBuilder.applicant.surveysResult());
+  history.push(RoutesBuilder.public.surveysResult());
   return <></>;
   // const careers = useMyCareers();
   // const filter = new OfferFilter(searchQuery);

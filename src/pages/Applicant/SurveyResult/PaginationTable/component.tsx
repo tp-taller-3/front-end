@@ -106,7 +106,7 @@ export const PaginationTable: FunctionComponent<IResult> = ({ question, headers 
 
   return (
     <>
-      <div className={classNames(styles.answerHeader)}>
+      <div className={classNames(styles.answerHeader, styles.answerHeaderTable)}>
         <Subtitle className={classNames(styles.title)}>{question.questionText}</Subtitle>
       </div>
       <div className={styles.table}>
@@ -114,8 +114,13 @@ export const PaginationTable: FunctionComponent<IResult> = ({ question, headers 
           <Table>
             {headers && (
               <TableHead>
-                {headers.map(header => (
-                  <TableCell key={header}>{header}</TableCell>
+                {headers.map((header, index) => (
+                  <TableCell
+                    key={header}
+                    {...(index + 1 === headers?.length && { align: "right" })}
+                  >
+                    {header}
+                  </TableCell>
                 ))}
               </TableHead>
             )}

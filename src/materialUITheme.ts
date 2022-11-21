@@ -1,7 +1,7 @@
-import { createMuiTheme } from "@material-ui/core/styles";
+import { createTheme } from "@material-ui/core/styles";
 import { esES } from "@material-ui/core/locale";
 
-export const MaterialUITheme = createMuiTheme(
+export const MaterialUITheme = createTheme(
   {
     palette: {
       primary: {
@@ -116,6 +116,13 @@ export const MaterialUITheme = createMuiTheme(
         anchorOriginTopRightRectangle: {
           top: "8px",
           right: "8px"
+        }
+      },
+      MuiPaper: {
+        elevation1: {
+          boxShadow:
+            "0px 0px 1px 0px rgb(0 0 0 / 20%), 0px 0px 3px 1px rgb(0 0 0 / 14%), 0px 0px 2px 0px rgb(0 0 0 / 12%)",
+          backgroundColor: "#fafafa"
         }
       }
     }

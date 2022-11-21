@@ -49,7 +49,7 @@ export const CSVUpload: FunctionComponent = () => {
             <ActionButton
               kind="success"
               onClick={() => {
-                history.push(RoutesBuilder.applicant.surveysResult());
+                history.push(RoutesBuilder.public.surveysResult());
                 closeSnackbar();
               }}
             >

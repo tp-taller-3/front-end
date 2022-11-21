@@ -14,6 +14,7 @@ export interface INavBarTranslations {
   tasks: string;
   csvUpload: string;
   signUp: string;
+  logIn: string;
   logOut: string;
   myProfile: string;
   myCompanyProfile: string;
@@ -34,7 +35,7 @@ export interface INavBarProps extends INavBarContainerProps {
   logOut: () => void;
   links: INavBarLink[];
   username?: string;
-  translations: INavBarTranslations;
+  translations?: INavBarTranslations;
   currentPath: string;
   bottomEl: RefObject<HTMLDivElement>;
   navBarEl: RefObject<HTMLDivElement>;

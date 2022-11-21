@@ -1,7 +1,7 @@
 const USERS = "usuarios";
 const APPLICANTS = "postulantes";
 const COMPANIES = "empresas";
-const SURVEYS_RESULT = "resultado-encuestas";
+const SURVEYS_RESULT = "resultados-encuestas";
 const CSV_UPLOAD = "cargar-csv";
 const ADMINS = "administradores";
 const APPLICATIONS = "postulaciones";
@@ -91,8 +91,6 @@ export const RoutesBuilder = {
 
     login: () => applicantRoute(LOGIN),
 
-    surveysResult: () => applicantRoute(SURVEYS_RESULT),
-
     myProfile: () => applicantRoute(PROFILE),
 
     editMyProfile: () => applicantRoute(PROFILE, EDIT),
@@ -164,6 +162,8 @@ export const RoutesBuilder = {
 
     notFound: () => publicRoute(NOT_FOUND),
 
-    forbidden: () => publicRoute(FORBIDDEN)
+    forbidden: () => publicRoute(FORBIDDEN),
+
+    surveysResult: () => publicRoute(SURVEYS_RESULT)
   }
 };
