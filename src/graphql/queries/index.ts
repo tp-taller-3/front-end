@@ -51,6 +51,7 @@ const GET_REJECTED_COMPANY_PROFILE_MESSAGE_BY_UUID = loader(
 );
 const GET_STATISTICS = loader("./getStatistics.graphql");
 const GET_SEMESTERS = loader("./getSemesters.graphql");
+const GET_SEMESTERS_PAGINATED = loader("./getSemestersPaginated.graphql");
 const GET_DEPARTMENTS = loader("./getDepartments.graphql");
 const GET_COURSES = loader("./getCourses.graphql");
 const GET_QUESTIONS = loader("./getQuestions.graphql");
@@ -101,6 +102,7 @@ export {
   GET_STATISTICS,
   GET_SURVEYS,
   GET_SEMESTERS,
+  GET_SEMESTERS_PAGINATED,
   GET_DEPARTMENTS,
   GET_COURSES,
   GET_QUESTIONS

@@ -17,6 +17,7 @@ import { AdminNotificationIcon } from "$components/AdminNotificationIcon";
 import { CompanyNotificationsIcon } from "$components/CompanyNotificationsIcon";
 import { ApplicantNotificationIcon } from "$components/ApplicantNotificationIcon";
 import YoutubeSearchedFor from "@material-ui/icons/YoutubeSearchedFor";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 describe("NavBarLinks", () => {
   const currentRoute = "";
@@ -288,6 +289,11 @@ describe("NavBarLinks", () => {
           path: RoutesBuilder.admin.csvUpload(),
           title: translations.csvUpload,
           icon: CloudUploadIcon
+        },
+        {
+          path: RoutesBuilder.admin.deleteSemester(),
+          title: "agregar translation",
+          icon: DeleteIcon
         },
         {
           path: RoutesBuilder.admin.applicants(),

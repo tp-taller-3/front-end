@@ -19,10 +19,12 @@ import { ActivateAdminAccount } from "./ActivateAdminAccount";
 import { RoutesBuilder } from "$models/RoutesBuilder";
 import { Statistics } from "./Statistics";
 import { CSVUpload } from "./CSVUpload";
+import { DeleteSemester } from "./DeleteSemester";
 
 const {
   admins,
   csvUpload,
+  deleteSemester,
   applicants,
   companies,
   home,
@@ -45,6 +47,7 @@ const {
 export const AdminRoutes = [
   { path: admins(), component: Admins },
   { path: csvUpload(), component: CSVUpload },
+  { path: deleteSemester(), component: DeleteSemester },
   {
     path: applicants(),
     component: (props: { location: Location }) => <Applicants searchQuery={props.location.search} />

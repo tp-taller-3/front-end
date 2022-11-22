@@ -11,10 +11,12 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import EqualizerIcon from "@material-ui/icons/Equalizer";
 import HomeIcon from "@material-ui/icons/Home";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import DeleteIcon from "@material-ui/icons/Delete";
 
 const {
   home,
   csvUpload,
+  deleteSemester,
   applicants,
   companies,
   admins,
@@ -36,6 +38,11 @@ export const AdminNavBarLinks = {
       path: csvUpload(),
       title: translations.csvUpload,
       icon: CloudUploadIcon
+    },
+    {
+      path: deleteSemester(),
+      title: "agregar translation",
+      icon: DeleteIcon
     },
     {
       path: applicants(),

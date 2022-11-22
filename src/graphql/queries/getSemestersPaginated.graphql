@@ -1,0 +1,12 @@
+query getSemestersPaginated($updatedBeforeThan: PaginatedInput) {
+  getSemestersPaginated(updatedBeforeThan: $updatedBeforeThan) {
+    shouldFetchMore
+    results {
+      uuid
+      year
+      semesterNumber
+      updatedAt
+      createdAt
+    }
+  }
+}

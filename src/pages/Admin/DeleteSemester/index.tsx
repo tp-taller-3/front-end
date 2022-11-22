@@ -1,0 +1,1 @@
+export { DeleteSemester } from "./component";
