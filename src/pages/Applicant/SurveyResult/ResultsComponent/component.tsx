@@ -3,25 +3,24 @@ import { ICourse } from "../interfaces";
 import { useQuestions } from "../../../../models/hooks/queries/useQuestions";
 import { AnswerComponent } from "../AnswerComponent";
 import { PaginationTable } from "../PaginationTable";
-import { IQuestion } from "../../../../interfaces/Question";
+import { Card } from "../../../../components/Card";
 
-const isTextAnswer = (question: IQuestion) => {
-  return question.answers.length > 6 || !question.answers.some(element => element.count > 1);
-};
+import styles from "./styles.module.scss";
 
 export const ResultsComponent: FunctionComponent<ICourse> = ({ course }) => {
   const questions = useQuestions(course);
 
   return (
     <>
-      {questions &&
-        questions.map(item => {
-          if (isTextAnswer(item)) {
-            return <PaginationTable question={item} />;
-          } else {
-            return <AnswerComponent question={item} />;
-          }
-        })}
+      {questions?.map(question => (
+        <Card className={styles.questionContainer} key={question.uuid}>
+          {question.isPublic ? (
+            <AnswerComponent question={question} />
+          ) : (
+            <PaginationTable question={question} headers={["Respuesta", "# Ocurrencias"]} />
+          )}
+        </Card>
+      ))}
     </>
   );
 };

@@ -8,6 +8,7 @@ import {
   TableCell,
   TableContainer,
   TableFooter,
+  TableHead,
   TablePagination,
   TableRow,
   useTheme
@@ -79,7 +80,7 @@ const createData = (answer: string, count: number) => {
   return { answer, count };
 };
 
-export const PaginationTable: FunctionComponent<IResult> = ({ question }) => {
+export const PaginationTable: FunctionComponent<IResult> = ({ question, headers }) => {
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
@@ -105,21 +106,31 @@ export const PaginationTable: FunctionComponent<IResult> = ({ question }) => {
 
   return (
     <>
-      <div className={classNames(styles.answerHeader)}>
+      <div className={classNames(styles.answerHeader, styles.answerHeaderTable)}>
         <Subtitle className={classNames(styles.title)}>{question.questionText}</Subtitle>
       </div>
       <div className={styles.table}>
         <TableContainer component={Paper}>
           <Table>
+            {headers && (
+              <TableHead>
+                {headers.map((header, index) => (
+                  <TableCell
+                    key={header}
+                    {...(index + 1 === headers?.length && { align: "right" })}
+                  >
+                    {header}
+                  </TableCell>
+                ))}
+              </TableHead>
+            )}
             <TableBody>
               {(rowsPerPage > 0
                 ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 : rows
               ).map(row => (
                 <TableRow key={row.answer}>
-                  <TableCell component="th" scope="row">
-                    {row.answer}
-                  </TableCell>
+                  <TableCell scope="row">{row.answer}</TableCell>
                   <TableCell style={{ width: 160 }} align="right">
                     {row.count}
                   </TableCell>

@@ -46,10 +46,10 @@ export const NavBar: FunctionComponent<INavBarProps> = ({
           onClick={logOut}
           to="#"
           inDrawer={inDrawer}
-          text={translations.logOut}
+          text={(username ? translations?.logOut : translations?.logIn) || ""}
         />
         <Link className={styles.credits} to={RoutesBuilder.public.credits()}>
-          {translations.credits}
+          {translations?.credits}
         </Link>
       </div>
     </div>

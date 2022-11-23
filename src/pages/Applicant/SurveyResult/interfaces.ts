@@ -10,4 +10,5 @@ export interface ICourse {
 
 export interface IResult {
   question: IQuestion;
+  headers?: string[];
 }

@@ -6,7 +6,7 @@
 }
 
 .formSection {
-  margin-bottom: $spacing-xl;
+  margin-bottom: $spacing-l;
 }
 
 .formContainer {
@@ -14,15 +14,13 @@
 }
 
 .doughnut {
-  height: 50%;
+  height: 200px;
   margin: auto auto $spacing-m;
-  width: 50%;
+  width: 200px;
 }
 
 .table {
-  height: 80%;
-  margin: auto auto $spacing-m;
-  width: 80%;
+  margin: $spacing-xl $spacing-s $spacing-s;
 }
 
 .title {
@@ -34,5 +32,23 @@
 }
 
 .answerHeader {
-  margin-bottom: $spacing-m;
+  display: flex;
+  margin-bottom: -$spacing-s;
+  margin-left: $spacing-s;
+}
+
+.answerHeaderTable {
+  display: flex;
+  margin: $spacing-s;
+}
+
+.subtitleContainer {
+  align-self: center;
+  padding-right: $spacing-l;
+}
+
+.subtitle {
+  color: $grey;
+  margin-bottom: $spacing-l;
+  margin-top: $spacing-s;
 }

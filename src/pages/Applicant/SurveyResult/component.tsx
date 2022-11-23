@@ -5,12 +5,12 @@ import { FormikForm } from "$components/FormikForm";
 import { SearchSelector } from "../../../components/SearchSelector";
 import { Window } from "../../../components/Window";
 import { useSemesters } from "../../../models/hooks/queries/useSemesters";
-import { FormSection } from "../../../components/FormSection";
 import { SelectCourses } from "./SelectCourse";
 
 import styles from "./styles.module.scss";
 import { noop } from "lodash";
 import { ResultsComponent } from "./ResultsComponent";
+import { Subtitle } from "../../../components/Subtitle";
 
 export const SurveysResult: FunctionComponent = () => {
   const semesters = useSemesters();
@@ -26,11 +26,11 @@ export const SurveysResult: FunctionComponent = () => {
       <Formik initialValues={initialValues} onSubmit={noop}>
         {formikProps => (
           <Form title={"Resultados"}>
-            <FormSection
-              title={"Selección de encuestas"}
-              subtitle={"Selección del periodo y curso para la visualización de los resultados"}
-              className={styles.formSection}
-            >
+            <div className={styles.formSection}>
+              <Subtitle>Selección de curso</Subtitle>
+              <p className={styles.subtitle}>
+                Seleccionar cuatrimestre y curso para ver los resultados
+              </p>
               <FormikForm>
                 {semesters && (
                   <SearchSelector
@@ -45,11 +45,9 @@ export const SurveysResult: FunctionComponent = () => {
                   <SelectCourses semester={formikProps.values.semester} />
                 )}
               </FormikForm>
-            </FormSection>
+            </div>
             {formikProps.values.course && formikProps.values.semester && (
-              <FormSection title={"Resultados encuesta"} subtitle={`Encuesta del curso`}>
-                <ResultsComponent course={formikProps.values.course}></ResultsComponent>
-              </FormSection>
+              <ResultsComponent course={formikProps.values.course}></ResultsComponent>
             )}
           </Form>
         )}

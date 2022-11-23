@@ -4,6 +4,7 @@
 .mainContainer {
   display: flex;
   flex-direction: column;
+  margin: auto;
   max-width: 500px;
   padding: $spacing-xl;
 }
@@ -74,6 +75,7 @@
   font-size: $fontSize-m;
   font-weight: unset;
   margin-bottom: $spacing-xxl;
+  white-space: pre-wrap;
 }
 
 .password {

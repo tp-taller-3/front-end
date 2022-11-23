@@ -1,7 +1,7 @@
 const USERS = "usuarios";
 const APPLICANTS = "postulantes";
 const COMPANIES = "empresas";
-const SURVEYS_RESULT = "resultado-encuestas";
+const SURVEYS_RESULT = "resultados-encuestas";
 const CSV_UPLOAD = "cargar-csv";
 const ADMINS = "administradores";
 const APPLICATIONS = "postulaciones";
@@ -31,7 +31,7 @@ const DELETE_SEMESTER = "delete-semester";
 
 const routeBuilder = (urlPrefix: string) => (...path: string[]) => `${urlPrefix}/${path.join("/")}`;
 
-export const applicantRoutePrefix = "postulante";
+export const applicantRoutePrefix = "estudiante";
 export const adminRoutePrefix = "admin";
 const applicantRoute = routeBuilder(`/${applicantRoutePrefix}`);
 const companyRoute = routeBuilder("/empresa");
@@ -95,8 +95,6 @@ export const RoutesBuilder = {
       `${applicantRoute(SIGN_UP)}${dni ? queryParams(`dni=${dni}`) : ""}`,
 
     login: () => applicantRoute(LOGIN),
-
-    surveysResult: () => applicantRoute(SURVEYS_RESULT),
 
     myProfile: () => applicantRoute(PROFILE),
 
@@ -169,6 +167,8 @@ export const RoutesBuilder = {
 
     notFound: () => publicRoute(NOT_FOUND),
 
-    forbidden: () => publicRoute(FORBIDDEN)
+    forbidden: () => publicRoute(FORBIDDEN),
+
+    surveysResult: () => publicRoute(SURVEYS_RESULT)
   }
 };

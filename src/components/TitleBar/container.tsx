@@ -1,26 +1,19 @@
 import React, { FunctionComponent } from "react";
 import { TitleBar } from "./component";
 import { ITitleBarContainerProps, ITranslations } from "./interfaces";
-import { useCurrentUser, useTranslations } from "$hooks";
+import { useTranslations } from "$hooks";
 
 export const TitleBarContainer: FunctionComponent<ITitleBarContainerProps> = ({
   showNavBar,
   ...props
 }) => {
   const translations = useTranslations<ITranslations>("titleBar");
-  const currentUser = useCurrentUser().data.getCurrentUser;
-
-  const canChangeCurrentRole = () => {
-    if (!currentUser) return false;
-    if (currentUser?.company) return false;
-    return !!(currentUser.admin && currentUser.applicant);
-  };
 
   return (
     <TitleBar
-      canChangeCurrentRole={canChangeCurrentRole}
+      canChangeCurrentRole={() => false}
       title={translations?.title}
-      showNavBar={!!currentUser && showNavBar}
+      showNavBar={showNavBar}
       {...props}
     />
   );
