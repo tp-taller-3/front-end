@@ -20,6 +20,7 @@ import { RoutesBuilder } from "$models/RoutesBuilder";
 import { Statistics } from "./Statistics";
 import { CSVUpload } from "./CSVUpload";
 import { DeleteSemester } from "./DeleteSemester";
+import { DeleteSemesterAction } from "./DeleteSemesterAction";
 
 const {
   admins,
@@ -41,7 +42,8 @@ const {
   editAdmin,
   deactivateAdminAccount,
   activateAdminAccount,
-  statistics
+  statistics,
+  deleteSemesterPage
 } = RoutesBuilder.admin;
 
 export const AdminRoutes = [
@@ -81,5 +83,6 @@ export const AdminRoutes = [
   { path: editAdmin(":uuid"), component: EditAdmin },
   { path: deactivateAdminAccount(":uuid"), component: DeactivateAdminAccount },
   { path: activateAdminAccount(":uuid"), component: ActivateAdminAccount },
-  { path: statistics(), component: Statistics }
+  { path: statistics(), component: Statistics },
+  { path: deleteSemesterPage(":uuid"), component: DeleteSemesterAction }
 ];

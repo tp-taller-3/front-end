@@ -69,6 +69,8 @@ export const RoutesBuilder = {
 
     editAdmin: (uuid: string) => adminRoute(ADMINS, EDIT, uuid),
 
+    deleteSemesterPage: (uuid: string) => adminRoute(DELETE_SEMESTER, EDIT, uuid),
+
     deactivateAdminAccount: (uuid: string) => adminRoute(ADMINS, DEACTIVATE_ACCOUNT, uuid),
 
     activateAdminAccount: (uuid: string) => adminRoute(ADMINS, ACTIVATE_ACCOUNT, uuid),

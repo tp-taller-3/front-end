@@ -41,7 +41,7 @@ export const AdminNavBarLinks = {
     },
     {
       path: deleteSemester(),
-      title: "agregar translation",
+      title: translations.deleteSemester,
       icon: DeleteIcon
     },
     {

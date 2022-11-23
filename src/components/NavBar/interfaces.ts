@@ -13,6 +13,7 @@ export interface INavBarTranslations {
   settings: string;
   tasks: string;
   csvUpload: string;
+  deleteSemester: string;
   signUp: string;
   logOut: string;
   myProfile: string;

@@ -26,6 +26,7 @@ describe("NavBarLinks", () => {
     applicants: "applicants",
     admins: "admins",
     users: "usuarios",
+    deleteSemester: "Eliminar Cuatrimestre",
     jobOffers: "jobOffers",
     jobApplications: "jobApplications",
     createOffer: "createOffer",
@@ -292,7 +293,7 @@ describe("NavBarLinks", () => {
         },
         {
           path: RoutesBuilder.admin.deleteSemester(),
-          title: "agregar translation",
+          title: translations.deleteSemester,
           icon: DeleteIcon
         },
         {
