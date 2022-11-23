@@ -1,0 +1,9 @@
+mutation DeleteSemester($uuid: ID!) {
+  deleteSemester(uuid: $uuid) {
+    uuid
+    year
+    semesterNumber
+    updatedAt
+    createdAt
+  }
+}
