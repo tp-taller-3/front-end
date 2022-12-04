@@ -11,6 +11,7 @@ import SupervisedUserCircleIcon from "@material-ui/icons/SupervisedUserCircle";
 // import EqualizerIcon from "@material-ui/icons/Equalizer";
 // import HomeIcon from "@material-ui/icons/Home";
 import CloudUploadIcon from "@material-ui/icons/CloudUpload";
+import DeleteIcon from "@material-ui/icons/Delete";
 import YoutubeSearchedFor from "@material-ui/icons/YoutubeSearchedFor";
 
 const {
@@ -18,12 +19,13 @@ const {
   csvUpload,
   // applicants,
   // companies,
-  admins
+  admins,
   // offers,
   // jobApplications,
   // notifications,
   // settings,
-  // statistics
+  // statistics,
+  deleteSemester
 } = RoutesBuilder.admin;
 const { surveysResult } = RoutesBuilder.public;
 
@@ -54,6 +56,11 @@ export const AdminNavBarLinks = {
     //   title: translations.companies,
     //   icon: BusinessIcon
     // },
+    {
+      path: deleteSemester(),
+      title: translations.deleteSemester,
+      icon: DeleteIcon
+    },
     {
       path: admins(),
       title: translations.admins,

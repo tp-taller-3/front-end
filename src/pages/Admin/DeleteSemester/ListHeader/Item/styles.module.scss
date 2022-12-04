@@ -1,0 +1,21 @@
+@import "$styles/mixins/_tableList";
+
+.item {
+  @include headerItem;
+
+  &.year {
+    grid-area: year;
+  }
+
+  &.semesterNumber {
+    grid-area: semesterNumber;
+  }
+
+  &.createdAt {
+    grid-area: createdAt;
+  }
+
+  &.actions {
+    grid-area: actions;
+  }
+}

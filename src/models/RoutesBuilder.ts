@@ -27,6 +27,7 @@ const PASSWORD = "contrasena";
 const REQUEST = "solicitar";
 const EXPLANATION = "explicacion";
 const STATISTICS = "estadisticas";
+const DELETE_SEMESTER = "delete-semester";
 
 const routeBuilder = (urlPrefix: string) => (...path: string[]) => `${urlPrefix}/${path.join("/")}`;
 
@@ -45,6 +46,8 @@ export const RoutesBuilder = {
       `${adminRoute("")}${queryParams(searchParams)}`,
 
     csvUpload: () => adminRoute(CSV_UPLOAD),
+
+    deleteSemester: () => adminRoute(DELETE_SEMESTER),
 
     applicants: ({ searchParams }: { searchParams?: string } = {}) =>
       `${adminRoute(APPLICANTS)}${queryParams(searchParams)}`,
@@ -65,6 +68,8 @@ export const RoutesBuilder = {
     signUp: () => adminRoute(SIGN_UP),
 
     editAdmin: (uuid: string) => adminRoute(ADMINS, EDIT, uuid),
+
+    deleteSemesterPage: (uuid: string) => adminRoute(DELETE_SEMESTER, EDIT, uuid),
 
     deactivateAdminAccount: (uuid: string) => adminRoute(ADMINS, DEACTIVATE_ACCOUNT, uuid),
 

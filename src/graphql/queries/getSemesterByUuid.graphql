@@ -1,0 +1,9 @@
+query getSemesterByUuid($uuid: ID!) {
+  getSemesterByUuid(uuid: $uuid) {
+    uuid
+    year
+    semesterNumber
+    updatedAt
+    createdAt
+  }
+}

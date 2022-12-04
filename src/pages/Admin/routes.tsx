@@ -19,10 +19,13 @@ import { ActivateAdminAccount } from "./ActivateAdminAccount";
 import { RoutesBuilder } from "$models/RoutesBuilder";
 import { Statistics } from "./Statistics";
 import { CSVUpload } from "./CSVUpload";
+import { DeleteSemester } from "./DeleteSemester";
+import { DeleteSemesterAction } from "./DeleteSemesterAction";
 
 const {
   admins,
   csvUpload,
+  deleteSemester,
   applicants,
   companies,
   home,
@@ -39,12 +42,14 @@ const {
   editAdmin,
   deactivateAdminAccount,
   activateAdminAccount,
-  statistics
+  statistics,
+  deleteSemesterPage
 } = RoutesBuilder.admin;
 
 export const AdminRoutes = [
   { path: admins(), component: Admins },
   { path: csvUpload(), component: CSVUpload },
+  { path: deleteSemester(), component: DeleteSemester },
   {
     path: applicants(),
     component: (props: { location: Location }) => <Applicants searchQuery={props.location.search} />
@@ -78,5 +83,6 @@ export const AdminRoutes = [
   { path: editAdmin(":uuid"), component: EditAdmin },
   { path: deactivateAdminAccount(":uuid"), component: DeactivateAdminAccount },
   { path: activateAdminAccount(":uuid"), component: ActivateAdminAccount },
-  { path: statistics(), component: Statistics }
+  { path: statistics(), component: Statistics },
+  { path: deleteSemesterPage(":uuid"), component: DeleteSemesterAction }
 ];
