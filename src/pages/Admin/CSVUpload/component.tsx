@@ -42,7 +42,7 @@ export const CSVUpload: FunctionComponent = () => {
     if (teachersCSV) formData.append("teachersCSV", teachersCSV);
 
     try {
-      const response = await axios.post(UPLOAD_URL, formData);
+      const response = await axios.post(UPLOAD_URL, formData, { withCredentials: true });
       if (response.statusText === "Created") {
         enqueueSnackbar(translations.success, {
           action: (
