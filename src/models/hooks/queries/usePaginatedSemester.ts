@@ -7,5 +7,6 @@ export const usePaginatedSemester = () =>
     documentNode: GET_SEMESTERS_PAGINATED,
     queryName: "getSemestersPaginated",
     variables: {},
+    fetchPolicy: "network-only",
     timestampKey: "createdAt"
   });
