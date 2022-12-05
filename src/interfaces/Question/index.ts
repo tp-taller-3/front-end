@@ -10,6 +10,7 @@ export interface IQuestion {
   uuid: string;
   isPublic: boolean;
   questionText: string;
+  teacherName: string;
   category: string;
   answers: IAnswer[];
   updatedAt: string;

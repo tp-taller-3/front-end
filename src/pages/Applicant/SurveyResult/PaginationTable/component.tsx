@@ -17,7 +17,7 @@ import { FirstPage, KeyboardArrowLeft, KeyboardArrowRight, LastPage } from "@mat
 import { IResult } from "../interfaces";
 import styles from "../styles.module.scss";
 import classNames from "classnames";
-import { Subtitle } from "../../../../components/Subtitle";
+import { QuestionText } from "../QuestionText";
 
 interface ITablePaginationActionsProps {
   count: number;
@@ -107,7 +107,7 @@ export const PaginationTable: FunctionComponent<IResult> = ({ question, headers 
   return (
     <>
       <div className={classNames(styles.answerHeader, styles.answerHeaderTable)}>
-        <Subtitle className={classNames(styles.title)}>{question.questionText}</Subtitle>
+        <QuestionText question={question} />
       </div>
       <div className={styles.table}>
         <TableContainer component={Paper}>

@@ -4,6 +4,7 @@ query GetQuestions($courseUuid: ID!) {
     isPublic
     questionText
     category
+    teacherName
     updatedAt
     createdAt
     answers {
