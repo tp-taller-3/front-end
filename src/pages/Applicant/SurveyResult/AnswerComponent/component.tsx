@@ -6,7 +6,7 @@ import styles from "../styles.module.scss";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend, Title } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import classNames from "classnames";
-import { Subtitle } from "../../../../components/Subtitle";
+import { QuestionText } from "../QuestionText";
 
 ChartJS.register(ArcElement, Tooltip, Legend, Title);
 
@@ -52,7 +52,7 @@ export const AnswerComponent: FunctionComponent<IResult> = ({ question }) => {
   return (
     <div className={classNames(styles.answerHeader)}>
       <div className={styles.subtitleContainer}>
-        <Subtitle className={classNames(styles.title)}>{question.questionText}</Subtitle>
+        <QuestionText question={question} />
       </div>
       <div className={styles.doughnut}>
         <Doughnut data={data} options={options} />
