@@ -6,8 +6,6 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import styles from "./styles.module.scss";
 import classNames from "classnames";
 import { noop } from "lodash";
-import { Link } from "../Link";
-import { RoutesBuilder } from "$models/RoutesBuilder";
 
 export const NavBar: FunctionComponent<INavBarProps> = ({
   className,
@@ -48,9 +46,6 @@ export const NavBar: FunctionComponent<INavBarProps> = ({
           inDrawer={inDrawer}
           text={(username ? translations?.logOut : translations?.logIn) || ""}
         />
-        <Link className={styles.credits} to={RoutesBuilder.public.credits()}>
-          {translations?.credits}
-        </Link>
       </div>
     </div>
     <ExpandMoreIcon
