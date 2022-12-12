@@ -1,5 +1,5 @@
 // @ts-ignore
-import React, { FunctionComponent, useEffect, useState } from "react";
+import React, { FunctionComponent } from "react";
 // import { Dashboard } from "./component";
 // import { IAdminTasksFilter, TAdminTask } from "$interfaces/AdminTask";
 // import { useAdminTasks } from "$hooks/queries";
@@ -11,11 +11,7 @@ import { RoutesBuilder } from "$models/RoutesBuilder";
 // import { AdminTasksFilter } from "$models/SearchFilters/AdminTasksFilter";
 import { useHistory } from "react-router-dom";
 
-export const DashboardContainer: FunctionComponent<IDashboardContainerProps> = (
-  {
-    // searchQuery
-  }
-) => {
+export const DashboardContainer: FunctionComponent<IDashboardContainerProps> = () => {
   const history = useHistory();
   history.push(RoutesBuilder.admin.csvUpload());
   return <></>;

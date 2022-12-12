@@ -56,6 +56,7 @@ const GET_SEMESTERS_PAGINATED = loader("./getSemestersPaginated.graphql");
 const GET_DEPARTMENTS = loader("./getDepartments.graphql");
 const GET_COURSES = loader("./getCourses.graphql");
 const GET_QUESTIONS = loader("./getQuestions.graphql");
+const GET_SEMESTER_STATISTICS = loader("./getSemesterStatistics.graphql");
 
 export {
   GET_CURRENT_USER,
@@ -107,5 +108,6 @@ export {
   GET_SEMESTERS_PAGINATED,
   GET_DEPARTMENTS,
   GET_COURSES,
-  GET_QUESTIONS
+  GET_QUESTIONS,
+  GET_SEMESTER_STATISTICS
 };

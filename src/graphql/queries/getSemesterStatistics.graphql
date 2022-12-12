@@ -1,0 +1,5 @@
+query getSemesterStatistics($uuid: ID!) {
+  getSemesterStatistics(uuid: $uuid) {
+    courseCount
+  }
+}
