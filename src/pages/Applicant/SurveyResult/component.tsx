@@ -37,7 +37,11 @@ export const SurveysResult: FunctionComponent = () => {
                     name={`semester`}
                     options={semesters}
                     label={"Cuatrimestre"}
-                    getOptionLabel={semester => `${semester.semesterNumber}C ${semester.year}`}
+                    getOptionLabel={semester =>
+                      semester.semesterNumber === 0
+                        ? `Verano ${semester.year}`
+                        : `${semester.semesterNumber}C ${semester.year}`
+                    }
                     getOptionValue={option => option.uuid}
                   />
                 )}
