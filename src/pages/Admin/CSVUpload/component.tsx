@@ -107,7 +107,7 @@ export const CSVUpload: FunctionComponent = () => {
                     disabled={isSubmitting}
                     fieldName="semester"
                     title={translations.semester}
-                    options={["1", "2"].map(value => ({
+                    options={["0", "1", "2"].map(value => ({
                       value,
                       label: (translations as any)[value]
                     }))}
