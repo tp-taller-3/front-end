@@ -154,7 +154,7 @@ export const CSVUpload: FunctionComponent = () => {
               return (
                 <div>
                   <Subtitle>{translations?.spinner}</Subtitle>
-                  <LoadingSpinner />
+                  <LoadingSpinner className={styles.submitButton} />
                 </div>
               );
             }
