@@ -14,6 +14,8 @@ import { useHistory } from "react-router-dom";
 import { interpolateValues } from "../../../models/interpolateValues";
 
 import styles from "./styles.module.scss";
+import { LoadingSpinner } from "../../../components/LoadingSpinner";
+import { Subtitle } from "../../../components/Subtitle";
 
 const BASE_URL = Configuration.application_base_url.slice(
   0,
@@ -100,53 +102,62 @@ export const CSVUpload: FunctionComponent = () => {
       <Form title={translations.title}>
         <Formik initialValues={{ semester: "", year: "" }} onSubmit={onSubmit}>
           {({ values: { year, semester }, isSubmitting, errors }) => {
-            return (
-              <FormikForm id="csvUpload">
-                <div className={styles.semesterYearContainer}>
-                  <SelectField
-                    disabled={isSubmitting}
-                    fieldName="semester"
-                    title={translations.semester}
-                    options={["0", "1", "2"].map(value => ({
-                      value,
-                      label: (translations as any)[value]
-                    }))}
-                  />
-                  <PositiveIntegerField label="Año" name="year" />
+            if (!isSubmitting) {
+              return (
+                <FormikForm id="csvUpload">
+                  <div className={styles.semesterYearContainer}>
+                    <SelectField
+                      disabled={isSubmitting}
+                      fieldName="semester"
+                      title={translations.semester}
+                      options={["0", "1", "2"].map(value => ({
+                        value,
+                        label: (translations as any)[value]
+                      }))}
+                    />
+                    <PositiveIntegerField label="Año" name="year" />
+                  </div>
+                  <div className={styles.fileField}>
+                    <label htmlFor="answersCSV">{translations.answersCSV}</label>
+                    <input
+                      id="answersCSV"
+                      name="answersCSV"
+                      type="file"
+                      accept=".csv"
+                      disabled={isSubmitting}
+                      onChange={e => e.target.files && setAnswersCSV(e.target.files[0])}
+                    />
+                  </div>
+                  <div className={styles.fileField}>
+                    <label htmlFor="teachersCSV">{translations.teachersCSV}</label>
+                    <input
+                      id="teachersCSV"
+                      name="teachersCSV"
+                      type="file"
+                      accept=".csv"
+                      disabled={isSubmitting}
+                      onChange={e => e.target.files && setTeachersCSV(e.target.files[0])}
+                    />
+                  </div>
+                  <SubmitButton
+                    className={styles.submitButton}
+                    kind="primary"
+                    disabled={!(answersCSV && teachersCSV && year && semester) || isSubmitting}
+                    errors={errors}
+                    type="submit"
+                  >
+                    {translations?.title}
+                  </SubmitButton>
+                </FormikForm>
+              );
+            } else {
+              return (
+                <div>
+                  <Subtitle>{translations?.spinner}</Subtitle>
+                  <LoadingSpinner className={styles.submitButton} />
                 </div>
-                <div className={styles.fileField}>
-                  <label htmlFor="answersCSV">{translations.answersCSV}</label>
-                  <input
-                    id="answersCSV"
-                    name="answersCSV"
-                    type="file"
-                    accept=".csv"
-                    disabled={isSubmitting}
-                    onChange={e => e.target.files && setAnswersCSV(e.target.files[0])}
-                  />
-                </div>
-                <div className={styles.fileField}>
-                  <label htmlFor="teachersCSV">{translations.teachersCSV}</label>
-                  <input
-                    id="teachersCSV"
-                    name="teachersCSV"
-                    type="file"
-                    accept=".csv"
-                    disabled={isSubmitting}
-                    onChange={e => e.target.files && setTeachersCSV(e.target.files[0])}
-                  />
-                </div>
-                <SubmitButton
-                  className={styles.submitButton}
-                  kind="primary"
-                  disabled={!(answersCSV && teachersCSV && year && semester) || isSubmitting}
-                  errors={errors}
-                  type="submit"
-                >
-                  {translations?.title}
-                </SubmitButton>
-              </FormikForm>
-            );
+              );
+            }
           }}
         </Formik>
       </Form>
@@ -163,6 +174,7 @@ interface ITranslations {
   answersCSV: string;
   teachersCSV: string;
   success: string;
+  spinner: string;
   unknownError: string;
   checkResults: string;
   noFiles: string;
